@@ -8,6 +8,9 @@ const globalStyles = css`
   html,
   body {
     height: 100%;
+    background-color: #0c0c0c;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
   }
 
   body,
