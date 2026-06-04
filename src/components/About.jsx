@@ -21,17 +21,10 @@ const Title = styled.h2`
   text-align: center;
 `;
 
-const LogoLineBox = styled.img`
-  height: 100px;
-  width: 100%;
-  background-color: transparent;
-`;
-
 export default function About() {
   return (
     <Container>
       <Section>
-        <LogoLineBox src={LogoLine} />
         <Title>About</Title>
       </Section>
     </Container>

@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Bannerlist } from "../apis/BannerList";
+import { NavLink } from "react-router-dom";
 
 const BannerContainer = styled.div`
   width: 100%;
@@ -56,8 +57,34 @@ const PageNation = styled.div`
   cursor: pointer;
 `;
 
+const CollectionText = styled.div`
+  padding: 30px;
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: #202f3d75;
+
+  span {
+    font-size: 24px;
+  }
+  p {
+    font-size: 16px;
+    white-space: pre-line;
+  }
+`;
+
+const GoCollection = styled(NavLink)`
+  font-size: 16px;
+`;
+
 export default function Banner() {
   const [current, setCurrent] = useState(0);
+  const activeBanner = Bannerlist[current];
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -82,6 +109,11 @@ export default function Banner() {
           </PageNation>
         ))}
       </PageNationContainer>
+      <CollectionText>
+        <span>{activeBanner.name} collection</span>
+        <p>{activeBanner.collection}</p>
+        <GoCollection>컬렉션 보러가기 -</GoCollection>
+      </CollectionText>
     </BannerContainer>
   );
 }
