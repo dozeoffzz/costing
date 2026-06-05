@@ -3,10 +3,14 @@ import { Outlet } from "react-router-dom";
 import Header from "./Header";
 
 const LayoutContainer = styled.div`
-  width: 100%;
+  max-width: 1920px;
 `;
 const MainContainer = styled.main`
   width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+
+  background-color: #0c0c0c;
 
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;

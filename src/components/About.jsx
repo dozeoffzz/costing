@@ -8,6 +8,7 @@ const Container = styled.div`
   padding: 0 63px;
   width: 100%;
   height: 100vh;
+  scroll-snap-align: center;
   background-color: #0c0c0c;
 `;
 

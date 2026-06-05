@@ -3,33 +3,26 @@ import { AllProducts } from "../apis/BannerList";
 import { useState } from "react";
 import SaveIcon from "../assets/icons/SaveIcon.svg";
 
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 63px;
-  width: 100%;
-  height: 100vh;
-  background-color: #0c0c0c;
-`;
-
 const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
-  height: 800px;
+  height: 100vh;
+  scroll-snap-align: center;
 `;
 
 const Title = styled.h2`
   font-size: 32px;
   text-align: center;
+  margin-bottom: 30px;
 `;
 
 const CategoryContainer = styled.div`
   display: flex;
   gap: 100px;
+  margin-bottom: 30px;
 `;
 
 const CategoryButton = styled.button`
@@ -37,7 +30,7 @@ const CategoryButton = styled.button`
   padding-left: 20px;
   color: ${({ $active }) => ($active ? "#fafafa" : "#444")};
   font-weight: ${({ $active }) => ($active ? "700" : "400")};
-  font-size: 24px;
+  font-size: 20px;
   transition: all.3s ease;
 
   &::before {
@@ -69,6 +62,7 @@ const ProductsContianer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  height: 500px;
 `;
 
 const ProductCard = styled.div`
@@ -155,49 +149,47 @@ export default function Products() {
     setCurrentPage(0);
   };
   return (
-    <Container>
-      <Section>
-        <Title>Products</Title>
-        <CategoryContainer>
-          <CategoryButton $active={category === "all"} onClick={() => handleCategory("all")}>
-            All
-          </CategoryButton>
-          <CategoryButton $active={category === "glasses"} onClick={() => handleCategory("glasses")}>
-            Glasses
-          </CategoryButton>
-          <CategoryButton $active={category === "sunglasses"} onClick={() => handleCategory("sunglasses")}>
-            SunGlasses
-          </CategoryButton>
-        </CategoryContainer>
-        <ProductsWrapper>
-          <ButtonWrap onClick={prevPage}>
-            <PrevOverlay />
-            <PrevOverlay />
-          </ButtonWrap>
-          <ProductsContianer>
-            {visibleProducts.map((item) => (
-              <ProductCard key={item.id}>
-                <img src={item.img} alt={item.name} />
-                <Info>
-                  <div>
-                    <h4>
-                      {item.num} {item.name}
-                    </h4>
-                    <p>219,000 ₩</p>
-                  </div>
-                  <SaveIconWrap>
-                    <SaveIcons src={SaveIcon} />
-                  </SaveIconWrap>
-                </Info>
-              </ProductCard>
-            ))}
-          </ProductsContianer>
-          <ButtonWrap onClick={nextPage}>
-            <NextOverlay />
-            <NextOverlay />
-          </ButtonWrap>
-        </ProductsWrapper>
-      </Section>
-    </Container>
+    <Section>
+      <Title>Products</Title>
+      <CategoryContainer>
+        <CategoryButton $active={category === "all"} onClick={() => handleCategory("all")}>
+          All
+        </CategoryButton>
+        <CategoryButton $active={category === "glasses"} onClick={() => handleCategory("glasses")}>
+          Glasses
+        </CategoryButton>
+        <CategoryButton $active={category === "sunglasses"} onClick={() => handleCategory("sunglasses")}>
+          SunGlasses
+        </CategoryButton>
+      </CategoryContainer>
+      <ProductsWrapper>
+        <ButtonWrap onClick={prevPage}>
+          <PrevOverlay />
+          <PrevOverlay />
+        </ButtonWrap>
+        <ProductsContianer>
+          {visibleProducts.map((item) => (
+            <ProductCard key={item.id}>
+              <img src={item.img} alt={item.name} />
+              <Info>
+                <div>
+                  <h4>
+                    {item.num} {item.name}
+                  </h4>
+                  <p>219,000 ₩</p>
+                </div>
+                <SaveIconWrap>
+                  <SaveIcons src={SaveIcon} />
+                </SaveIconWrap>
+              </Info>
+            </ProductCard>
+          ))}
+        </ProductsContianer>
+        <ButtonWrap onClick={nextPage}>
+          <NextOverlay />
+          <NextOverlay />
+        </ButtonWrap>
+      </ProductsWrapper>
+    </Section>
   );
 }

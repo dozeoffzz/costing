@@ -10,7 +10,7 @@ import LogoLine from "../assets/icons/LogoLine.svg";
 const Section = styled.section`
   min-height: 100vh;
 
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   scroll-snap-stop: always;
 `;
 
