@@ -15,7 +15,7 @@ const Section = styled.section`
 const Title = styled.h2`
   font-size: 32px;
   text-align: center;
-  /* margin-bottom: 63px; */
+  margin-bottom: 63px;
 `;
 
 const ProductsContainer = styled.div`

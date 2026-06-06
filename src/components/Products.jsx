@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { AllProducts } from "../apis/BannerList";
 import { useState } from "react";
 import SaveIcon from "../assets/icons/SaveIcon.svg";
+import { NavLink } from "react-router-dom";
 
 const Section = styled.section`
   display: flex;
@@ -170,18 +171,20 @@ export default function Products() {
         <ProductsContianer>
           {visibleProducts.map((item) => (
             <ProductCard key={item.id}>
-              <img src={item.img} alt={item.name} />
-              <Info>
-                <div>
-                  <h4>
-                    {item.num} {item.name}
-                  </h4>
-                  <p>219,000 ₩</p>
-                </div>
-                <SaveIconWrap>
-                  <SaveIcons src={SaveIcon} />
-                </SaveIconWrap>
-              </Info>
+              <NavLink to="detailpage">
+                <img src={item.img} alt={item.name} />
+                <Info>
+                  <div>
+                    <h4>
+                      {item.num} {item.name}
+                    </h4>
+                    <p>219,000 ₩</p>
+                  </div>
+                  <SaveIconWrap>
+                    <SaveIcons src={SaveIcon} />
+                  </SaveIconWrap>
+                </Info>
+              </NavLink>
             </ProductCard>
           ))}
         </ProductsContianer>

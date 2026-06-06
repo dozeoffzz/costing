@@ -15,7 +15,7 @@ const Section = styled.section`
 const Title = styled.h2`
   font-size: 32px;
   text-align: center;
-  /* margin-bottom: 63px; */
+  margin-bottom: 63px;
 `;
 
 const NewItemContainer = styled.div`
@@ -42,14 +42,14 @@ const Overlay = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 30px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #0c0c0c50;
 
   span {
-    font-size: 36px;
+    font-size: 24px;
   }
 `;
 
@@ -111,9 +111,9 @@ export default function NewEyewear() {
   return (
     <Section>
       <Title>New Eyewear</Title>
-      <NewItemContainer onMouseLeave={() => setActive(null)}>
+      <NewItemContainer>
         <PrevOverlay onClick={prevProduct}></PrevOverlay>
-        <ItemContainer>
+        <ItemContainer onMouseLeave={() => setActive(null)}>
           {product.images.map((item, index) => (
             <NewItemList key={index} active={active === index} onMouseEnter={() => setActive(index)}>
               <DefaultImg src={item.default} active={active === index} alt={item.name} />

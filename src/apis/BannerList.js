@@ -11,6 +11,14 @@ import New1 from "../assets/new/new1.webp";
 import New2 from "../assets/new/new2.webp";
 import New3 from "../assets/new/new3.webp";
 
+import New0041 from "../assets/new/new0041.webp";
+import New0042 from "../assets/new/new0042.webp";
+import New0043 from "../assets/new/new0043.webp";
+
+import New0051 from "../assets/new/new0051.webp";
+import New0052 from "../assets/new/new0052.webp";
+import New0053 from "../assets/new/new0053.webp";
+
 import NewHover1 from "../assets/new/newHover1.webp";
 import NewHover2 from "../assets/new/newHover2.webp";
 import NewHover3 from "../assets/new/newHover3.webp";
@@ -38,6 +46,13 @@ import sunglasses5 from "../assets/products/sunglasses5.webp";
 import sunglasses6 from "../assets/products/sunglasses6.webp";
 import sunglasses7 from "../assets/products/sunglasses7.webp";
 import sunglasses8 from "../assets/products/sunglasses8.webp";
+
+import Detail1 from "../assets/detail/detail1.webp";
+import Detail2 from "../assets/detail/detail2.webp";
+import Detail3 from "../assets/detail/detail3.webp";
+import Detail4 from "../assets/detail/detail4.webp";
+import Detail5 from "../assets/detail/detail5.webp";
+import Detail6 from "../assets/detail/detail6.webp";
 
 export const Bannerlist = [
   {
@@ -116,6 +131,26 @@ export const NewEyewearProducts = [
       { default: New3, hover: NewHover3 },
     ],
   },
+  {
+    id: 2,
+    num: "004",
+    name: "Signature futuristic eye",
+    images: [
+      { default: New0041, hover: NewHover1 },
+      { default: New0042, hover: NewHover2 },
+      { default: New0043, hover: NewHover3 },
+    ],
+  },
+  {
+    id: 3,
+    num: "005",
+    name: "Signature Classic eye",
+    images: [
+      { default: New0051, hover: NewHover1 },
+      { default: New0052, hover: NewHover2 },
+      { default: New0053, hover: NewHover3 },
+    ],
+  },
 ];
 
 export const CollaborationProducts = [
@@ -145,4 +180,24 @@ export const AllProducts = [
   { id: 14, num: "008", name: "asdfdfh", category: "sunglasses", img: sunglasses6 },
   { id: 15, num: "007", name: "asdffgh", category: "sunglasses", img: sunglasses7 },
   { id: 16, num: "007", name: "asdfert", category: "sunglasses", img: sunglasses8 },
+];
+
+export const DetailImg = [
+  {
+    id: 1,
+    num: "001",
+    name: "asdf",
+    category: "sunglasses",
+    totalwidth: "147mm",
+    templelength: "142mm",
+    dbl: "19mm",
+    eyesizea: "55mm",
+    eyesizeb: "47mm",
+    meterial: "Stainless Steel",
+    coating: "ANTI-REFLECTIVE (AR)",
+    Base: "4-Base",
+    transmissionrate: "30%",
+    uvprotection: "99.9%",
+    products: [Detail1, Detail2, Detail3, Detail4, Detail5, Detail6],
+  },
 ];

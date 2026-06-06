@@ -40,7 +40,7 @@ const PageNationContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 610px;
+  height: 500px;
 `;
 
 const PageNation = styled.div`
@@ -49,7 +49,7 @@ const PageNation = styled.div`
   align-items: center;
   justify-content: flex-end;
   width: ${({ active }) => (active ? "300px" : "150px")};
-  height: 50px;
+  height: 45px;
   background-color: #202f3d75;
   font-size: 24px;
 

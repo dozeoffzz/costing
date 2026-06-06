@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
 import MyPageIcon from "../assets/icons/MyPageIcon.svg";
 import CartIcon from "../assets/icons/CartIcon.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const HoverArea = styled.div`
   position: fixed;
@@ -20,7 +20,7 @@ const HeaderContianer = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 0 63px;
-  height: 100px;
+  height: 110px;
   position: fixed;
   top: 0;
   left: 0;
@@ -30,6 +30,8 @@ const HeaderContianer = styled.header`
   transform: ${({ visible }) => (visible ? "translateY(0)" : "translateY(-100%)")};
 
   background: ${({ isTop }) => (isTop ? "transparent" : "transparent")};
+
+  backdrop-filter: ${({ isTop, hover }) => (isTop && !hover ? "none" : "blur(12px)")};
 `;
 
 const Costing = styled.h1`
@@ -55,66 +57,88 @@ const IconContainer = styled.div`
   min-width: 100px;
 `;
 
-export default function Header() {
-  const moveSection = (id) => {
-    const element = document.getElementById(id);
+export default function Header({ scrollRef }) {
+  const navigate = useNavigate();
+  const location = useLocation();
 
-    if (!element) return;
-
-    const offset = 100;
-    const top = element.getBoundingClientRect().top + window.pageYOffset - offset;
-
-    window.scrollTo({
-      top,
-      behavior: "smooth",
-    });
-  };
   const [visible, setVisible] = useState(true);
   const [isTop, setIsTop] = useState(true);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setIsTop(currentScrollY < 100);
-
-      if (currentScrollY < 100) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   const [hoverHeader, setHoverHeader] = useState(false);
 
+  // 🔥 섹션 이동 함수 (핵심)
+  const moveSection = (id) => {
+    const isHome = location.pathname === "/";
+
+    if (!isHome) {
+      navigate(`/#${id}`);
+      return;
+    }
+
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  // 🔥 Home에서 scroll 감지 (헤더 hide/show)
+  useEffect(() => {
+    const container = scrollRef?.current;
+
+    if (!container) return;
+
+    const handleScroll = () => {
+      const currentScrollY = container.scrollTop;
+
+      setIsTop(currentScrollY < 100);
+      setVisible(currentScrollY < 100);
+    };
+
+    container.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, [scrollRef]);
+  // 🔥 hash 이동 처리 (Detail → Home 이동 대응)
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100); // DOM 렌더 타이밍 보정
+    }
+  }, [location]);
   return (
     <>
       <HoverArea onMouseEnter={() => setHoverHeader(true)} />
+
       <HeaderContianer
         visible={visible || hoverHeader}
         isTop={isTop}
         onMouseEnter={() => setHoverHeader(true)}
         onMouseLeave={() => setHoverHeader(false)}
       >
+        {/* Logo */}
         <NavLink to="/">
-          <Costing onClick={() => moveSection("banner")}>costhing</Costing>
+          <Costing>costhing</Costing>
         </NavLink>
 
+        {/* Menu */}
         <MenuContainer>
           <p onClick={() => moveSection("new")}>New</p>
           <p onClick={() => moveSection("collaboration")}>Collaboration</p>
           <p onClick={() => moveSection("products")}>Products</p>
           <p onClick={() => moveSection("about")}>About</p>
         </MenuContainer>
+
+        {/* Icons */}
         <IconContainer>
-          <NavLink>
+          <NavLink to="/mypage">
             <img src={MyPageIcon} />
           </NavLink>
-          <NavLink>
+          <NavLink to="/cart">
             <img src={CartIcon} />
           </NavLink>
         </IconContainer>
