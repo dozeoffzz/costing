@@ -65,7 +65,6 @@ export default function Header({ scrollRef }) {
   const [isTop, setIsTop] = useState(true);
   const [hoverHeader, setHoverHeader] = useState(false);
 
-  // 🔥 섹션 이동 함수 (핵심)
   const moveSection = (id) => {
     const isHome = location.pathname === "/";
 
@@ -80,7 +79,6 @@ export default function Header({ scrollRef }) {
     }
   };
 
-  // 🔥 Home에서 scroll 감지 (헤더 hide/show)
   useEffect(() => {
     const container = scrollRef?.current;
 
@@ -97,7 +95,6 @@ export default function Header({ scrollRef }) {
 
     return () => container.removeEventListener("scroll", handleScroll);
   }, [scrollRef]);
-  // 🔥 hash 이동 처리 (Detail → Home 이동 대응)
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace("#", "");
@@ -107,7 +104,7 @@ export default function Header({ scrollRef }) {
         if (el) {
           el.scrollIntoView({ behavior: "smooth" });
         }
-      }, 100); // DOM 렌더 타이밍 보정
+      }, 100);
     }
   }, [location]);
   return (
