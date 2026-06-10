@@ -74,9 +74,11 @@ export default function Header({ scrollRef }) {
     }
 
     const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
+
+    scrollRef.current?.scrollTo({
+      top: el.offsetTop,
+      behavior: "smooth",
+    });
   };
 
   useEffect(() => {

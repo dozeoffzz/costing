@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import { useRef } from "react";
+import Footer from "./Footer";
 
 const LayoutContainer = styled.div`
   max-width: 1920px;
