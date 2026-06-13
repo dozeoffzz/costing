@@ -1,26 +1,5 @@
 import styled from "@emotion/styled";
-import LogoLine from "../assets/icons/LogoLine.svg";
 import AboutMp4 from "../assets/aboutmp4/AboutMp4.mp4";
-// const Section = styled.section`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   width: 100%;
-//   height: 100vh;
-//   scroll-snap-align: center;
-// `;
-
-// const Title = styled.h2`
-//   font-size: 32px;
-//   text-align: center;
-// `;
-// const Video = styled.video`
-//   width: 100%;
-//   max-width: 1200px;
-//   height: auto;
-//   object-fit: cover;
-// `;
 const Section = styled.section`
   position: relative;
   width: 100%;
@@ -44,19 +23,19 @@ const Overlay = styled.div`
   position: absolute;
   inset: 0;
 
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.479);
 
-  z-index: 1;
+  z-index: 2;
 `;
 
 const AboutContent = styled.div`
   position: absolute;
   display: flex;
   align-items: flex-end;
-  gap: 40px;
+  gap: 80px;
   bottom: 50px;
-  left: 200px;
-  z-index: 1;
+  left: 63px;
+  z-index: 3;
 
   h3 {
     font-size: 36px;
@@ -66,6 +45,36 @@ const AboutContent = styled.div`
   }
   p {
     font-size: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 20px;
+    left: 20px;
+    right: 20px;
+    align-items: flex-start;
+    text-align: left;
+    transform: none;
+    h3 {
+      font-size: 24px;
+    }
+    span {
+      font-size: 21px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 375px) {
+    h3 {
+      font-size: 16px;
+    }
+    span {
+      font-size: 14px;
+    }
+    p {
+      font-size: 12px;
+    }
   }
 `;
 
@@ -91,8 +100,7 @@ export default function About() {
             <p>진정한 시선에는 대가가 따른다.</p>
             <p>COSTING은 단순히 안경을 판매하는 브랜드가 아니다.</p>
             <p>우리는 세상을 바라보는 방식의 가치를 만든다.</p>
-            <p>누군가는 가격을 본다.</p>
-            <p>누군가는 브랜드를 본다.</p>
+            <p>누군가는 가격을 본다, 누군가는 브랜드를 본다.</p>
             <p>COSTING은 그 너머의 시선을 본다.</p>
             <p>우리가 지불하는 것은 제품의 가격이 아니라 세상을 더 선명하게 바라보는 경험이다.</p>
           </div>

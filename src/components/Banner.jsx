@@ -8,6 +8,12 @@ const BannerContainer = styled.div`
   height: 100vh;
   overflow: hidden;
   position: relative;
+  @media (max-width: 1024px) {
+    height: 100%;
+  }
+  @media (max-width: 375px) {
+    height: 100%;
+  }
 `;
 
 const BannerTrack = styled.div`
@@ -39,8 +45,16 @@ const PageNationContainer = styled.div`
   left: 63px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 500px;
+  gap: 20px;
+
+  @media (max-width: 1024px) {
+    left: 30px;
+    height: 300px;
+  }
+  @media (max-width: 375px) {
+    left: 20px;
+    height: 400px;
+  }
 `;
 
 const PageNation = styled.div`
@@ -55,6 +69,15 @@ const PageNation = styled.div`
 
   transition: all 0.4s ease;
   cursor: pointer;
+
+  @media (max-width: 1024px) {
+    width: ${({ active }) => (active ? "200px" : "100px")};
+    font-size: 16px;
+  }
+  @media (max-width: 375px) {
+    width: ${({ active }) => (active ? "150px" : "70px")};
+    font-size: 14px;
+  }
 `;
 
 const CollectionText = styled.div`
@@ -76,6 +99,31 @@ const CollectionText = styled.div`
     font-size: 16px;
     white-space: pre-line;
   }
+
+  @media (max-width: 1919px) {
+    padding: 10px;
+    left: auto;
+    right: 30px;
+    bottom: 50px;
+    transform: none;
+  }
+  @media (max-width: 1024px) {
+    padding: 10px;
+    left: auto;
+    right: 30px;
+    bottom: 20px;
+    transform: none;
+
+    span {
+      font-size: 16px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 375px) {
+    display: none;
+  }
 `;
 
 const GoCollection = styled(NavLink)`
@@ -85,6 +133,17 @@ const GoCollection = styled(NavLink)`
 export default function Banner() {
   const [current, setCurrent] = useState(0);
   const activeBanner = Bannerlist[current];
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 375);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 375);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -98,7 +157,7 @@ export default function Banner() {
       <BannerTrack current={current}>
         {Bannerlist.map((item) => (
           <ImgContainer key={item.id}>
-            <img src={item.img} alt={item.name} />
+            <img src={isMobile ? item.mobileImg : item.img} alt={item.name} />
           </ImgContainer>
         ))}
       </BannerTrack>

@@ -10,7 +10,7 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 const Section = styled.section`
-  min-height: 100vh;
+  /* min-height: 100vh; */
 
   scroll-snap-align: center;
   scroll-snap-stop: always;

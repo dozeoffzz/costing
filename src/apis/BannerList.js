@@ -7,6 +7,8 @@ import BannerImg006 from "../assets/banner/006.webp";
 import BannerImg007 from "../assets/banner/007.webp";
 import BannerImg008 from "../assets/banner/008.webp";
 
+import BannerImgMobile001 from "../assets/banner/001banner.webp";
+
 import New1 from "../assets/new/new1.webp";
 import New2 from "../assets/new/new2.webp";
 import New3 from "../assets/new/new3.webp";
@@ -29,6 +31,12 @@ import collabo3 from "../assets/collaboration/collabo3.webp";
 import collabo4 from "../assets/collaboration/collabo4.webp";
 import collabo5 from "../assets/collaboration/collabo5.webp";
 
+import collaboOakley1 from "../assets/collaboration/collaboOakley1.webp";
+import collaboOakley2 from "../assets/collaboration/collaboOakley2.webp";
+import collaboOakley3 from "../assets/collaboration/collaboOakley3.webp";
+import collaboOakley4 from "../assets/collaboration/collaboOakley4.webp";
+import collaboOakley5 from "../assets/collaboration/collaboOakley5.webp";
+
 import glasses1 from "../assets/products/glasses1.webp";
 import glasses2 from "../assets/products/glasses2.webp";
 import glasses3 from "../assets/products/glasses3.webp";
@@ -47,11 +55,63 @@ import sunglasses6 from "../assets/products/sunglasses6.webp";
 import sunglasses7 from "../assets/products/sunglasses7.webp";
 import sunglasses8 from "../assets/products/sunglasses8.webp";
 
-import Detail1 from "../assets/detail/detail1.webp";
+import glasses1Detail1 from "../assets/detail/glasses1detail1.webp";
+import glasses2Detail1 from "../assets/detail/glasses2detail1.webp";
+import glasses3Detail1 from "../assets/detail/glasses3detail1.webp";
+import glasses4Detail1 from "../assets/detail/glasses4detail1.webp";
+import glasses5Detail1 from "../assets/detail/glasses5detail1.webp";
+import glasses6Detail1 from "../assets/detail/glasses6detail1.webp";
+import glasses7Detail1 from "../assets/detail/glasses7detail1.webp";
+import glasses8Detail1 from "../assets/detail/glasses8detail1.webp";
+
+import glasses1Detail4 from "../assets/detail/glasses1detail4.webp";
+import glasses2Detail4 from "../assets/detail/glasses2detail4.webp";
+import glasses3Detail4 from "../assets/detail/glasses3detail4.webp";
+import glasses4Detail4 from "../assets/detail/glasses4detail4.webp";
+import glasses5Detail4 from "../assets/detail/glasses5detail4.webp";
+import glasses6Detail4 from "../assets/detail/glasses6detail4.webp";
+import glasses7Detail4 from "../assets/detail/glasses7detail4.webp";
+import glasses8Detail4 from "../assets/detail/glasses8detail4.webp";
+
+import glasses1Detail5 from "../assets/detail/glasses1detail5.webp";
+import glasses2Detail5 from "../assets/detail/glasses2detail5.webp";
+import glasses3Detail5 from "../assets/detail/glasses3detail5.webp";
+import glasses4Detail5 from "../assets/detail/glasses4detail5.webp";
+import glasses5Detail5 from "../assets/detail/glasses5detail5.webp";
+import glasses6Detail5 from "../assets/detail/glasses6detail5.webp";
+import glasses7Detail5 from "../assets/detail/glasses7detail5.webp";
+import glasses8Detail5 from "../assets/detail/glasses8detail5.webp";
+
+import sunglasses1Detail1 from "../assets/detail/sunglasses1detail1.webp";
+import sunglasses2Detail1 from "../assets/detail/sunglasses2detail1.webp";
+import sunglasses3Detail1 from "../assets/detail/sunglasses3detail1.webp";
+import sunglasses4Detail1 from "../assets/detail/sunglasses4detail1.webp";
+import sunglasses5Detail1 from "../assets/detail/sunglasses5detail1.webp";
+import sunglasses6Detail1 from "../assets/detail/sunglasses6detail1.webp";
+import sunglasses7Detail1 from "../assets/detail/sunglasses7detail1.webp";
+import sunglasses8Detail1 from "../assets/detail/sunglasses8detail1.webp";
+
 import Detail2 from "../assets/detail/detail2.webp";
 import Detail3 from "../assets/detail/detail3.webp";
-import Detail4 from "../assets/detail/detail4.webp";
-import Detail5 from "../assets/detail/detail5.webp";
+
+import sunglasses1Detail4 from "../assets/detail/sunglasses1detail4.webp";
+import sunglasses2Detail4 from "../assets/detail/sunglasses2detail4.webp";
+import sunglasses3Detail4 from "../assets/detail/sunglasses3detail4.webp";
+import sunglasses4Detail4 from "../assets/detail/sunglasses4detail4.webp";
+import sunglasses5Detail4 from "../assets/detail/sunglasses5detail4.webp";
+import sunglasses6Detail4 from "../assets/detail/sunglasses6detail4.webp";
+import sunglasses7Detail4 from "../assets/detail/sunglasses7detail4.webp";
+import sunglasses8Detail4 from "../assets/detail/sunglasses8detail4.webp";
+
+import sunglasses1Detail5 from "../assets/detail/sunglasses1detail5.webp";
+import sunglasses2Detail5 from "../assets/detail/sunglasses2detail5.webp";
+import sunglasses3Detail5 from "../assets/detail/sunglasses3detail5.webp";
+import sunglasses4Detail5 from "../assets/detail/sunglasses4detail5.webp";
+import sunglasses5Detail5 from "../assets/detail/sunglasses5detail5.webp";
+import sunglasses6Detail5 from "../assets/detail/sunglasses6detail5.webp";
+import sunglasses7Detail5 from "../assets/detail/sunglasses7detail5.webp";
+import sunglasses8Detail5 from "../assets/detail/sunglasses8detail5.webp";
+
 import Detail6 from "../assets/detail/detail6.webp";
 
 export const Bannerlist = [
@@ -59,6 +119,7 @@ export const Bannerlist = [
     id: 1,
     name: "001",
     img: BannerImg001,
+    mobileImg: BannerImgMobile001,
     collection: `빠르게 변화하는 도시의 움직임에서 영감을 받은 컬렉션입니다.
       가볍고 역동적인 실루엣을 중심으로 설계되었으며 활동적인 라이프스타일에 최적화되었습니다.
       일상과 퍼포먼스의 경계를 자연스럽게 연결합니다.`,
@@ -157,9 +218,16 @@ export const CollaborationProducts = [
   {
     id: 1,
     num: "001",
-    name: "Costing X Gentle Monster",
+    name: "Gentle Monster",
     mainImage: collabo1,
     products: [collabo2, collabo3, collabo4, collabo5],
+  },
+  {
+    id: 2,
+    num: "002",
+    name: "Oakley",
+    mainImage: collaboOakley1,
+    products: [collaboOakley2, collaboOakley3, collaboOakley4, collaboOakley5],
   },
 ];
 
@@ -167,7 +235,7 @@ export const AllProducts = [
   {
     id: 1,
     num: "004",
-    name: "asdfasdfasdf",
+    name: "NEO",
     category: "glasses",
     totalwidth: "147mm",
     templelength: "142mm",
@@ -179,14 +247,14 @@ export const AllProducts = [
     Base: "4-Base",
     transmissionrate: "30%",
     uvprotection: "99.9%",
-    price: "₩ 219,000",
-    detailImg: [Detail1, Detail2, Detail3, Detail4, Detail5, Detail6],
+    price: "₩ 280,000",
+    detailImg: [glasses1Detail1, Detail2, Detail3, glasses1Detail4, glasses1Detail5, Detail6],
     img: glasses1,
   },
   {
     id: 2,
     num: "001",
-    name: "asdfasdfsadf",
+    name: "SIMULACRE",
     category: "glasses",
     totalwidth: "147mm",
     templelength: "142mm",
@@ -198,14 +266,14 @@ export const AllProducts = [
     Base: "4-Base",
     transmissionrate: "30%",
     uvprotection: "99.9%",
-    price: "₩ 219,000",
-    detailImg: [Detail1, Detail2, Detail3, Detail4, Detail5, Detail6],
+    price: "₩ 340,000",
+    detailImg: [glasses2Detail1, Detail2, Detail3, glasses2Detail4, glasses2Detail5, Detail6],
     img: glasses2,
   },
   {
     id: 3,
     num: "006",
-    name: "asdfasdfasdf",
+    name: "ORIGIN",
     category: "glasses",
     totalwidth: "147mm",
     templelength: "142mm",
@@ -217,14 +285,14 @@ export const AllProducts = [
     Base: "4-Base",
     transmissionrate: "30%",
     uvprotection: "99.9%",
-    price: "₩ 219,000",
-    detailImg: [Detail1, Detail2, Detail3, Detail4, Detail5, Detail6],
+    price: "₩ 290,000",
+    detailImg: [glasses3Detail1, Detail2, Detail3, glasses3Detail4, glasses3Detail5, Detail6],
     img: glasses3,
   },
   {
     id: 4,
     num: "003",
-    name: "asdfasdf",
+    name: "OBLIQUE",
     category: "glasses",
     totalwidth: "147mm",
     templelength: "142mm",
@@ -236,14 +304,14 @@ export const AllProducts = [
     Base: "4-Base",
     transmissionrate: "30%",
     uvprotection: "99.9%",
-    price: "₩ 219,000",
-    detailImg: [Detail1, Detail2, Detail3, Detail4, Detail5, Detail6],
+    price: "₩ 260,000",
+    detailImg: [glasses4Detail1, Detail2, Detail3, glasses4Detail4, glasses4Detail5, Detail6],
     img: glasses4,
   },
   {
     id: 5,
     num: "005",
-    name: "asdfasdf",
+    name: "HYBRID",
     category: "glasses",
     totalwidth: "147mm",
     templelength: "142mm",
@@ -255,14 +323,14 @@ export const AllProducts = [
     Base: "4-Base",
     transmissionrate: "30%",
     uvprotection: "99.9%",
-    price: "₩ 219,000",
-    detailImg: [Detail1, Detail2, Detail3, Detail4, Detail5, Detail6],
+    price: "₩ 295,000",
+    detailImg: [glasses5Detail1, Detail2, Detail3, glasses5Detail4, glasses5Detail5, Detail6],
     img: glasses5,
   },
   {
     id: 6,
     num: "005",
-    name: "asdfzxcv",
+    name: "UNDERCOVER",
     category: "glasses",
     totalwidth: "147mm",
     templelength: "142mm",
@@ -274,14 +342,14 @@ export const AllProducts = [
     Base: "4-Base",
     transmissionrate: "30%",
     uvprotection: "99.9%",
-    price: "₩ 219,000",
-    detailImg: [Detail1, Detail2, Detail3, Detail4, Detail5, Detail6],
+    price: "₩ 280,000",
+    detailImg: [glasses6Detail1, Detail2, Detail3, glasses6Detail4, glasses6Detail5, Detail6],
     img: glasses6,
   },
   {
     id: 7,
     num: "006",
-    name: "asdfzxcv",
+    name: "GHOST",
     category: "glasses",
     totalwidth: "147mm",
     templelength: "142mm",
@@ -293,14 +361,14 @@ export const AllProducts = [
     Base: "4-Base",
     transmissionrate: "30%",
     uvprotection: "99.9%",
-    price: "₩ 219,000",
-    detailImg: [Detail1, Detail2, Detail3, Detail4, Detail5, Detail6],
+    price: "₩ 310,000",
+    detailImg: [glasses7Detail1, Detail2, Detail3, glasses7Detail4, glasses7Detail5, Detail6],
     img: glasses7,
   },
   {
     id: 8,
     num: "001",
-    name: "asdfzxcvzxcv",
+    name: "GLAZE",
     category: "glasses",
     totalwidth: "147mm",
     templelength: "142mm",
@@ -312,14 +380,14 @@ export const AllProducts = [
     Base: "4-Base",
     transmissionrate: "30%",
     uvprotection: "99.9%",
-    price: "₩ 219,000",
-    detailImg: [Detail1, Detail2, Detail3, Detail4, Detail5, Detail6],
+    price: "₩ 290,000",
+    detailImg: [glasses8Detail1, Detail2, Detail3, glasses8Detail4, glasses8Detail5, Detail6],
     img: glasses8,
   },
   {
     id: 9,
     num: "001",
-    name: "asdfasdf",
+    name: "GASI",
     category: "sunglasses",
     totalwidth: "147mm",
     templelength: "142mm",
@@ -331,14 +399,14 @@ export const AllProducts = [
     Base: "4-Base",
     transmissionrate: "30%",
     uvprotection: "99.9%",
-    price: "₩ 219,000",
-    detailImg: [Detail1, Detail2, Detail3, Detail4, Detail5, Detail6],
+    price: "₩ 380,000",
+    detailImg: [sunglasses1Detail1, Detail2, Detail3, sunglasses1Detail4, sunglasses1Detail5, Detail6],
     img: sunglasses1,
   },
   {
     id: 10,
     num: "008",
-    name: "asdfasdf",
+    name: "MONO",
     category: "sunglasses",
     totalwidth: "147mm",
     templelength: "142mm",
@@ -350,14 +418,14 @@ export const AllProducts = [
     Base: "4-Base",
     transmissionrate: "30%",
     uvprotection: "99.9%",
-    price: "₩ 219,000",
-    detailImg: [Detail1, Detail2, Detail3, Detail4, Detail5, Detail6],
+    price: "₩ 310,000",
+    detailImg: [sunglasses2Detail1, Detail2, Detail3, sunglasses2Detail4, sunglasses2Detail5, Detail6],
     img: sunglasses2,
   },
   {
     id: 11,
     num: "004",
-    name: "asdfqweqr",
+    name: "TWIST",
     category: "sunglasses",
     totalwidth: "147mm",
     templelength: "142mm",
@@ -369,14 +437,14 @@ export const AllProducts = [
     Base: "4-Base",
     transmissionrate: "30%",
     uvprotection: "99.9%",
-    price: "₩ 219,000",
-    detailImg: [Detail1, Detail2, Detail3, Detail4, Detail5, Detail6],
+    price: "₩ 320,000",
+    detailImg: [sunglasses3Detail1, Detail2, Detail3, sunglasses3Detail4, sunglasses3Detail5, Detail6],
     img: sunglasses3,
   },
   {
     id: 12,
     num: "006",
-    name: "asdfqwer",
+    name: "KITSCH POP",
     category: "sunglasses",
     totalwidth: "147mm",
     templelength: "142mm",
@@ -388,14 +456,14 @@ export const AllProducts = [
     Base: "4-Base",
     transmissionrate: "30%",
     uvprotection: "99.9%",
-    price: "₩ 219,000",
-    detailImg: [Detail1, Detail2, Detail3, Detail4, Detail5, Detail6],
+    price: "₩ 280,000",
+    detailImg: [sunglasses4Detail1, Detail2, Detail3, sunglasses4Detail4, sunglasses4Detail5, Detail6],
     img: sunglasses4,
   },
   {
     id: 13,
     num: "003",
-    name: "asdfasdfg",
+    name: "CREAMSON",
     category: "sunglasses",
     totalwidth: "147mm",
     templelength: "142mm",
@@ -407,14 +475,14 @@ export const AllProducts = [
     Base: "4-Base",
     transmissionrate: "30%",
     uvprotection: "99.9%",
-    price: "₩ 219,000",
-    detailImg: [Detail1, Detail2, Detail3, Detail4, Detail5, Detail6],
+    price: "₩ 290,000",
+    detailImg: [sunglasses5Detail1, Detail2, Detail3, sunglasses5Detail4, sunglasses5Detail5, Detail6],
     img: sunglasses5,
   },
   {
     id: 14,
     num: "008",
-    name: "asdfdfh",
+    name: "ESPRESSO",
     category: "sunglasses",
     totalwidth: "147mm",
     templelength: "142mm",
@@ -426,14 +494,14 @@ export const AllProducts = [
     Base: "4-Base",
     transmissionrate: "30%",
     uvprotection: "99.9%",
-    price: "₩ 219,000",
-    detailImg: [Detail1, Detail2, Detail3, Detail4, Detail5, Detail6],
+    price: "₩ 270,000",
+    detailImg: [sunglasses6Detail1, Detail2, Detail3, sunglasses6Detail4, sunglasses6Detail5, Detail6],
     img: sunglasses6,
   },
   {
     id: 15,
     num: "007",
-    name: "asdffgh",
+    name: "CYBER CAT",
     category: "sunglasses",
     totalwidth: "147mm",
     templelength: "142mm",
@@ -445,14 +513,14 @@ export const AllProducts = [
     Base: "4-Base",
     transmissionrate: "30%",
     uvprotection: "99.9%",
-    price: "₩ 219,000",
-    detailImg: [Detail1, Detail2, Detail3, Detail4, Detail5, Detail6],
+    price: "₩ 330,000",
+    detailImg: [sunglasses7Detail1, Detail2, Detail3, sunglasses7Detail4, sunglasses7Detail5, Detail6],
     img: sunglasses7,
   },
   {
     id: 16,
     num: "007",
-    name: "asdfert",
+    name: "VORTEX",
     category: "sunglasses",
     totalwidth: "147mm",
     templelength: "142mm",
@@ -464,8 +532,8 @@ export const AllProducts = [
     Base: "4-Base",
     transmissionrate: "30%",
     uvprotection: "99.9%",
-    price: "₩ 219,000",
-    detailImg: [Detail1, Detail2, Detail3, Detail4, Detail5, Detail6],
+    price: "₩ 360,000",
+    detailImg: [sunglasses8Detail1, Detail2, Detail3, sunglasses8Detail4, sunglasses8Detail5, Detail6],
     img: sunglasses8,
   },
 ];

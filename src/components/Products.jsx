@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { AllProducts } from "../apis/BannerList";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SaveIcon from "../assets/icons/SaveIcon.svg";
 import { NavLink, useParams } from "react-router-dom";
 
@@ -12,24 +12,45 @@ const Section = styled.section`
   width: 100%;
   height: 100vh;
   scroll-snap-align: center;
+  @media (max-width: 1024px) {
+    height: 100%;
+  }
+  @media (max-width: 375px) {
+    height: 100%;
+  }
 `;
 
 const Title = styled.h2`
   font-size: 32px;
   text-align: center;
   margin-bottom: 30px;
+
+  @media (max-width: 1024px) {
+    font-size: 24px;
+  }
+  @media (max-width: 375px) {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
 `;
 
 const CategoryContainer = styled.div`
   display: flex;
   gap: 100px;
   margin-bottom: 30px;
+
+  @media (max-width: 1024px) {
+    gap: 100px;
+  }
+  @media (max-width: 375px) {
+    gap: 30px;
+  }
 `;
 
 const CategoryButton = styled.button`
   position: relative;
   padding-left: 20px;
-  color: ${({ $active }) => ($active ? "#fafafa" : "#444")};
+  color: ${({ $active }) => ($active ? "#fafafa" : "#aaaaaa")};
   font-weight: ${({ $active }) => ($active ? "700" : "400")};
   font-size: 20px;
   transition: all.3s ease;
@@ -50,6 +71,13 @@ const CategoryButton = styled.button`
     transform: translateY(-50%);
     transition: all.3s ease;
   }
+
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+  @media (max-width: 375px) {
+    font-size: 16px;
+  }
 `;
 
 const ProductsWrapper = styled.div`
@@ -63,7 +91,37 @@ const ProductsContianer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  height: 500px;
+  /* height: 500px; */
+
+  @media (max-width: 1024px) {
+    display: grid;
+
+    grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: column;
+
+    grid-auto-columns: 220px;
+
+    width: max-content;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    gap: 20px;
+  }
+
+  @media (max-width: 375px) {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
 `;
 
 const ProductCard = styled.div`
@@ -74,7 +132,21 @@ const ProductCard = styled.div`
   img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
+
+  @media (max-width: 1024px) {
+    width: 220px;
+  }
+
+  @media (max-width: 375px) {
+    flex: 0 0 180px;
+  }
+`;
+const ProductImg = styled.img`
+  width: 100%;
+  height: auto;
+  display: block;
 `;
 
 const Info = styled.div`
@@ -89,14 +161,21 @@ const Info = styled.div`
   text-align: right;
   color: #0c0c0c;
   font-size: 16px;
+
+  @media (max-width: 1024px) {
+    padding: 5px;
+    font-size: 14px;
+  }
+  @media (max-width: 375px) {
+    padding: 5px;
+    font-size: 12px;
+  }
 `;
 
 const SaveIconWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 24px;
-  height: 31px;
 `;
 
 const SaveIcons = styled.img`
@@ -105,12 +184,24 @@ const SaveIcons = styled.img`
 `;
 
 const ButtonWrap = styled.div`
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 70px;
-  height: 100%;
+  height: 90%;
   cursor: pointer;
+
+  @media (max-width: 1024px) {
+    width: 30px;
+    height: 460px;
+    gap: 20px;
+  }
+  @media (max-width: 375px) {
+    width: 20px;
+    height: 180px;
+    gap: 0px;
+  }
 `;
 
 const PrevOverlay = styled.button`
@@ -129,10 +220,22 @@ const NextOverlay = styled(PrevOverlay)`
 export default function Products() {
   const [category, setCategory] = useState("all");
   const [currentPage, setCurrentPage] = useState(0);
+  const [itemsPerPage, setItemsPerPage] = useState(8);
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(window.innerWidth <= 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileOrTablet(window.innerWidth <= 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const filteredProducts = category === "all" ? AllProducts : AllProducts.filter((item) => item.category === category);
-
-  const itemsPerPage = 8;
 
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
   const visibleProducts = filteredProducts.slice(currentPage * itemsPerPage, currentPage * itemsPerPage + itemsPerPage);
@@ -169,10 +272,10 @@ export default function Products() {
           <PrevOverlay />
         </ButtonWrap>
         <ProductsContianer>
-          {visibleProducts.map((item) => (
+          {(isMobileOrTablet ? filteredProducts : visibleProducts).map((item) => (
             <ProductCard key={item.id}>
               <NavLink to={`/detailpage/${item.id}`}>
-                <img src={item.img} alt={item.name} />
+                <ProductImg src={item.img} alt={item.name} />
                 <Info>
                   <div>
                     <h4>

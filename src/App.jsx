@@ -4,11 +4,13 @@ import MainLayout from "./components/MainLayout";
 import DetailPage from "./pages/DetailPage";
 export default function App() {
   return (
-    <Routes>
-      <Route element={<MainLayout />}>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/detailpage/:id" element={<DetailPage />} />
-      </Route>
-    </Routes>
+    <>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/detailpage/:id" element={<DetailPage />} />
+        </Route>
+      </Routes>
+    </>
   );
 }

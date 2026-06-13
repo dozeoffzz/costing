@@ -19,8 +19,8 @@ const HeaderContianer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 63px;
-  height: 110px;
+  padding: 30px 63px;
+  /* height: 110px; */
   position: fixed;
   top: 0;
   left: 0;
@@ -32,10 +32,28 @@ const HeaderContianer = styled.header`
   background: ${({ isTop }) => (isTop ? "transparent" : "transparent")};
 
   backdrop-filter: ${({ isTop, hover }) => (isTop && !hover ? "none" : "blur(12px)")};
+
+  @media (max-width: 1024px) {
+    padding: 30px 30px;
+  }
+  @media (max-width: 375px) {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    row-gap: 20px;
+  }
 `;
 
 const Costing = styled.h1`
+  display: flex;
+  align-items: center;
   font-size: 36px;
+  @media (max-width: 1024px) {
+    font-size: 24px;
+  }
+  @media (max-width: 375px) {
+    font-size: 24px;
+  }
 `;
 
 const MenuContainer = styled.div`
@@ -44,9 +62,21 @@ const MenuContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   min-width: 487px;
+  gap: 100px;
 
   p {
     cursor: pointer;
+  }
+  @media (max-width: 1024px) {
+    font-size: 16px;
+    gap: 0;
+  }
+  @media (max-width: 375px) {
+    order: 3;
+    width: 100%;
+    min-width: auto;
+    position: static;
+    gap: 0;
   }
 `;
 
@@ -54,31 +84,50 @@ const IconContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 100px;
+  gap: 50px;
+  /* min-width: 100px; */
+  @media (max-width: 1024px) {
+    img {
+      width: 16px;
+    }
+  }
+  @media (max-width: 375px) {
+    gap: 40px;
+    img {
+      width: 16px;
+    }
+  }
 `;
 
 export default function Header({ scrollRef }) {
-  const navigate = useNavigate();
-  const location = useLocation();
-
   const [visible, setVisible] = useState(true);
   const [isTop, setIsTop] = useState(true);
   const [hoverHeader, setHoverHeader] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const moveSection = (id) => {
-    const isHome = location.pathname === "/";
+    const isMainPage = location.pathname === "/";
 
-    if (!isHome) {
-      navigate(`/#${id}`);
+    if (isMainPage && scrollRef?.current) {
+      const el = document.getElementById(id);
+      const container = scrollRef.current;
+
+      if (!el) return;
+
+      const isTabletOrMobile = window.innerWidth <= 1024;
+
+      const top = isTabletOrMobile ? el.offsetTop - (container.clientHeight - el.clientHeight) / 2 : el.offsetTop;
+
+      container.scrollTo({
+        top,
+        behavior: "smooth",
+      });
+
       return;
     }
 
-    const el = document.getElementById(id);
-
-    scrollRef.current?.scrollTo({
-      top: el.offsetTop,
-      behavior: "smooth",
-    });
+    navigate(`/#${id}`);
   };
 
   useEffect(() => {
@@ -97,18 +146,7 @@ export default function Header({ scrollRef }) {
 
     return () => container.removeEventListener("scroll", handleScroll);
   }, [scrollRef]);
-  useEffect(() => {
-    if (location.hash) {
-      const id = location.hash.replace("#", "");
 
-      setTimeout(() => {
-        const el = document.getElementById(id);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 100);
-    }
-  }, [location]);
   return (
     <>
       <HoverArea onMouseEnter={() => setHoverHeader(true)} />
@@ -121,7 +159,7 @@ export default function Header({ scrollRef }) {
       >
         {/* Logo */}
         <NavLink to="/">
-          <Costing>costhing</Costing>
+          <Costing>costing</Costing>
         </NavLink>
 
         {/* Menu */}

@@ -16,6 +16,9 @@ const MainContainer = styled.main`
 
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  @media (max-width: 1024px) {
+    scroll-snap-type: none;
+  }
 `;
 
 export default function MainLayout() {

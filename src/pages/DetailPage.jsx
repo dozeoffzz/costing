@@ -12,6 +12,14 @@ import ProductInfo from "../components/ProductInfo";
 const DetailContainer = styled.div`
   position: relative;
   margin-top: 200px;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    margin-top: 100px;
+  }
+
+  @media (max-width: 375px) {
+    margin-top: 150px;
+  }
 `;
 
 const ImgContainer = styled.div`
@@ -20,12 +28,52 @@ const ImgContainer = styled.div`
   flex-direction: column;
   gap: 50px;
   width: 100%;
-  max-width: 1240px;
+  max-width: 1440px;
+
+  @media (max-width: 1919px) {
+    width: 100%;
+    max-width: 1440px;
+  }
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    gap: 30px;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+`;
+
+const ImgSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Detailcontent = styled.p`
+  padding: 0px 10px;
   margin-bottom: 100px;
   font-size: 24px;
+  max-width: 1440px;
+
+  @media (max-width: 1919px) {
+    width: 100%;
+    max-width: 1240px;
+  }
+  @media (max-width: 1024px) {
+    width: 100%;
+    font-size: 16px;
+  }
+  @media (max-width: 375px) {
+    width: 100%;
+    font-size: 12px;
+  }
 `;
 
 const DetailFitContianer = styled.div`
@@ -37,9 +85,25 @@ const DetailFitContianer = styled.div`
 `;
 const DetailFit = styled.span`
   font-size: 36px;
+
+  @media (max-width: 1024px) {
+    font-size: 32px;
+  }
+  @media (max-width: 375px) {
+    font-size: 24px;
+  }
 `;
 const FitGuide = styled.img`
   width: 1240px;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    max-width: 924px;
+  }
+  @media (max-width: 375px) {
+    width: 100%;
+    max-width: 335px;
+  }
 `;
 const DetailSizeMainContainer = styled.div`
   display: flex;
@@ -54,6 +118,20 @@ const DetailSize = styled(DetailFit)`
   margin-bottom: 50px;
 `;
 
+const FitGuideImgContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    padding: 30px;
+  }
+  @media (max-width: 375px) {
+    padding: 10px;
+  }
+`;
+
 const DetailInfoContainer = styled.div`
   padding: 50px;
   display: grid;
@@ -62,6 +140,13 @@ const DetailInfoContainer = styled.div`
   border-bottom: 1px solid #809db5;
   width: 100%;
   max-width: 1240px;
+
+  @media (max-width: 1024px) {
+  }
+  @media (max-width: 375px) {
+    padding: 50px 30px;
+    gap: 30px;
+  }
 `;
 
 const SizeInfo = styled.div`
@@ -69,16 +154,38 @@ const SizeInfo = styled.div`
   flex-direction: column;
   gap: 10px;
   text-align: center;
+  white-space: nowrap;
 `;
 
 const SizeInfoTitle = styled.p`
   font-size: 24px;
+
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+  @media (max-width: 375px) {
+    font-size: 12px;
+  }
 `;
 const SizeInfoSub = styled.p`
   font-size: 14px;
+
+  @media (max-width: 1024px) {
+    font-size: 14px;
+  }
+  @media (max-width: 375px) {
+    font-size: 10px;
+  }
 `;
 const SizeInfoMain = styled.p`
   font-size: 36px;
+
+  @media (max-width: 1024px) {
+    font-size: 24px;
+  }
+  @media (max-width: 375px) {
+    font-size: 16px;
+  }
 `;
 
 const ProductSkinContainer = styled.div`
@@ -88,6 +195,13 @@ const ProductSkinContainer = styled.div`
   width: 100%;
   max-width: 1240px;
   padding-top: 50px;
+
+  @media (max-width: 1024px) {
+    padding: 50px 20px 0px 20px;
+  }
+  @media (max-width: 375px) {
+    font-size: 16px;
+  }
 `;
 const ProductSkinWrap = styled.div`
   display: flex;
@@ -98,54 +212,89 @@ const ProductSkin = styled.div`
 `;
 
 const OtherProductContainer = styled.div`
-  padding: 100px 0;
+  padding: 100px 0 0 0;
   width: 100%;
   max-width: 1580px;
   margin: 0 auto;
   position: relative;
 `;
-const OtherProductTitle = styled(DetailSize)`
+const OtherProductTitle = styled(DetailFit)`
   display: flex;
   justify-self: center;
+  margin-bottom: 50px;
+
+  @media (max-width: 1024px) {
+  }
+  @media (max-width: 375px) {
+  }
 `;
 
 const PrevBtn = styled.button`
   display: flex;
-  width: 100%;
-  height: 50%;
+  width: 50px;
+  height: 270px;
   overflow: hidden;
   background: linear-gradient(to right, rgba(255, 255, 255, 0.8), transparent);
+  @media (max-width: 375px) {
+    max-height: 230px;
+  }
 `;
 const NextBtn = styled(PrevBtn)`
   background: linear-gradient(to left, rgba(255, 255, 255, 0.8), transparent);
 `;
 const OtherProdcutWrap = styled.div`
-  position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 1240px;
+  max-width: 1440px;
   margin: 0 auto;
   display: flex;
   justify-self: center;
 `;
 
+const OtherCarousel = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 const OtherProductTrack = styled.div`
   padding: 10px;
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 20px;
   transition: transform 0.4s ease;
   transform: translateX(${(props) => props.translate}px);
+
+  @media (max-width: 1024px) {
+    display: flex;
+
+    transform: none !important;
+
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  @media (max-width: 375px) {
+  }
 `;
 const OtherImg = styled.div`
   position: relative;
-  width: 230px;
+  width: 270px;
   flex-shrink: 0;
 
   img {
     width: 100%;
     display: block;
+  }
+
+  @media (max-width: 375px) {
+    width: 82%;
   }
 `;
 
@@ -183,7 +332,6 @@ const LogoLineImg = styled.img`
 export default function DetailPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { id } = useParams();
-
   const product = AllProducts.find((item) => item.id === Number(id));
 
   if (!product) {
@@ -192,7 +340,7 @@ export default function DetailPage() {
 
   const otherProducts = AllProducts.filter((item) => item.id !== Number(id));
 
-  const CARD_WIDTH = 230;
+  const CARD_WIDTH = 270;
   const GAP = 20;
 
   const moveDistance = CARD_WIDTH + GAP;
@@ -201,19 +349,21 @@ export default function DetailPage() {
     setCurrentIndex((prev) => Math.max(prev - 1, 0));
   };
   const handleNext = () => {
-    setCurrentIndex((prev) => Math.min(prev + 1, AllProducts.length - 5));
+    setCurrentIndex((prev) => Math.min(prev + 1, otherProducts.length - 5));
   };
   return (
     <>
       <DetailContainer>
-        <ProductInfo />
-        <ImgContainer>
-          {product.detailImg.map((img, index) => (
-            <div key={index}>
-              <img src={img} alt={`detail-${index}`} />
-            </div>
-          ))}
-        </ImgContainer>
+        <ImgSection>
+          <ImgContainer>
+            {product.detailImg.map((img, index) => (
+              <div key={index}>
+                <img src={img} alt={`detail-${index}`} />
+              </div>
+            ))}
+          </ImgContainer>
+          <ProductInfo />
+        </ImgSection>
         <Detailcontent>
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
           standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
@@ -224,9 +374,9 @@ export default function DetailPage() {
         </Detailcontent>
         <DetailFitContianer>
           <DetailFit>Fit Guide</DetailFit>
-          <div>
+          <FitGuideImgContainer>
             <FitGuide src={fitguide} />
-          </div>
+          </FitGuideImgContainer>
         </DetailFitContianer>
         <DetailSizeMainContainer>
           <DetailSize>Size Guide</DetailSize>
@@ -315,30 +465,32 @@ export default function DetailPage() {
           </ProductSkinContainer>
           <OtherProductContainer>
             <OtherProductTitle>Other Products</OtherProductTitle>
-            <OtherProdcutWrap>
-              <PrevBtn />
-              <OtherProductTrack translate={-(currentIndex * moveDistance)}>
-                {otherProducts.map((item) => (
-                  <OtherImg key={item.id}>
-                    <NavLink to={`/detailpage/${item.id}`}>
-                      <img src={item.img} alt={item.name} />
-                      <Info>
-                        <div>
-                          <h4>
-                            {item.num} {item.name}
-                          </h4>
-                          <p>219,000 ₩</p>
-                        </div>
-                        <SaveIconWrap>
-                          <SaveIcons src={SaveIcon} />
-                        </SaveIconWrap>
-                      </Info>
-                    </NavLink>
-                  </OtherImg>
-                ))}
-              </OtherProductTrack>
-              <NextBtn />
-            </OtherProdcutWrap>
+            <OtherCarousel>
+              <PrevBtn onClick={handlePrev} />
+              <OtherProdcutWrap>
+                <OtherProductTrack translate={-(currentIndex * moveDistance)}>
+                  {otherProducts.map((item) => (
+                    <OtherImg key={item.id}>
+                      <NavLink to={`/detailpage/${item.id}`}>
+                        <img src={item.img} alt={item.name} />
+                        <Info>
+                          <div>
+                            <h4>
+                              {item.num} {item.name}
+                            </h4>
+                            <p>219,000 ₩</p>
+                          </div>
+                          <SaveIconWrap>
+                            <SaveIcons src={SaveIcon} />
+                          </SaveIconWrap>
+                        </Info>
+                      </NavLink>
+                    </OtherImg>
+                  ))}
+                </OtherProductTrack>
+              </OtherProdcutWrap>
+              <NextBtn onClick={handleNext} />
+            </OtherCarousel>
           </OtherProductContainer>
         </DetailSizeMainContainer>
       </DetailContainer>
