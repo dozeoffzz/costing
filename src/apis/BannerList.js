@@ -8,6 +8,13 @@ import BannerImg007 from "../assets/banner/007.webp";
 import BannerImg008 from "../assets/banner/008.webp";
 
 import BannerImgMobile001 from "../assets/banner/001banner.webp";
+import BannerImgMobile002 from "../assets/banner/002banner.webp";
+import BannerImgMobile003 from "../assets/banner/003banner.webp";
+import BannerImgMobile004 from "../assets/banner/004banner.webp";
+import BannerImgMobile005 from "../assets/banner/005banner.webp";
+import BannerImgMobile006 from "../assets/banner/006banner.webp";
+import BannerImgMobile007 from "../assets/banner/007banner.webp";
+import BannerImgMobile008 from "../assets/banner/008banner.webp";
 
 import New1 from "../assets/new/new1.webp";
 import New2 from "../assets/new/new2.webp";
@@ -128,6 +135,7 @@ export const Bannerlist = [
     id: 2,
     name: "002",
     img: BannerImg002,
+    mobileImg: BannerImgMobile002,
     collection: `과거 아이웨어 디자인을 현대적으로 재해석한 컬렉션입니다.
       유려한 곡선과 독창적인 프레임 구조를 통해 전통적인 아름다움과 미래적인 감성을 동시에 담아냈습니다.
       개성을 표현하면서도 세련된 무드를 연출할 수 있습니다.`,
@@ -136,6 +144,7 @@ export const Bannerlist = [
     id: 3,
     name: "003",
     img: BannerImg003,
+    mobileImg: BannerImgMobile003,
     collection: `클래식한 실루엣을 바탕으로 현대적인 디테일을 더해 어떤 스타일에도 자연스럽게 어우러집니다.
       브랜드가 추구하는 미니멀한 디자인 철학을 가장 잘 보여주는 시그니처 라인입니다.`,
   },
@@ -143,6 +152,7 @@ export const Bannerlist = [
     id: 4,
     name: "004",
     img: BannerImg004,
+    mobileImg: BannerImgMobile004,
     collection: `디지털 시대의 새로운 시각을 제안하는 컬렉션입니다.
       실험적인 프레임과 미래적인 소재 표현을 통해 독창적인 존재감을 완성했습니다.
       기술과 패션의 조화를 경험할 수 있는 디자인 라인입니다.`,
@@ -151,6 +161,7 @@ export const Bannerlist = [
     id: 5,
     name: "005",
     img: BannerImg005,
+    mobileImg: BannerImgMobile005,
     collection: `도시적인 감성과 클래식한 디자인이 만난 컬렉션입니다.
       절제된 디테일과 균형 잡힌 비율을 통해 편안하면서도 세련된 스타일을 제공합니다.
       시간이 지나도 변하지 않는 가치를 담고 있습니다.`,
@@ -159,6 +170,7 @@ export const Bannerlist = [
     id: 6,
     name: "006",
     img: BannerImg006,
+    mobileImg: BannerImgMobile006,
     collection: `빛과 반사의 아름다움에서 영감을 받은 컬렉션입니다.
       섬세한 프레임 디테일과 가벼운 착용감을 통해 우아한 분위기를 연출합니다.
       일상 속에서도 특별한 존재감을 선사합니다.`,
@@ -167,6 +179,7 @@ export const Bannerlist = [
     id: 7,
     name: "007",
     img: BannerImg007,
+    mobileImg: BannerImgMobile007,
     collection: `대담한 실루엣과 혁신적인 디자인이 특징인 컬렉션입니다.
       기존 아이웨어의 틀을 벗어난 구조적 아름다움을 통해 강렬한 인상을 남깁니다.
       자신만의 스타일을 추구하는 사람들을 위해 탄생했습니다.`,
@@ -175,6 +188,7 @@ export const Bannerlist = [
     id: 8,
     name: "008",
     img: BannerImg008,
+    mobileImg: BannerImgMobile008,
     collection: `자연의 강인함과 현대적인 미니멀리즘을 결합한 컬렉션입니다.
       절제된 컬러와 날렵한 프레임 디자인이 강렬한 카리스마를 완성합니다.
       도심과 자연 어디에서나 돋보이는 프리미엄 아이웨어 라인입니다.`,

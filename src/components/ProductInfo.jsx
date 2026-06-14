@@ -32,7 +32,6 @@ const InfoContainer = styled.div`
     margin-top: 30px;
     background-color: #202f3d;
     z-index: 3;
-    flex-direction: row;
     margin-left: 0;
   }
 `;
