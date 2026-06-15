@@ -30,7 +30,7 @@ const ImgContainer = styled.div`
   width: 100%;
   max-width: 1440px;
 
-  @media (max-width: 1919px) {
+  @media (max-width: 1728px) {
     width: 100%;
     max-width: 1440px;
   }
@@ -62,7 +62,7 @@ const Detailcontent = styled.p`
   font-size: 24px;
   max-width: 1440px;
 
-  @media (max-width: 1919px) {
+  @media (max-width: 1728px) {
     width: 100%;
     max-width: 1240px;
   }

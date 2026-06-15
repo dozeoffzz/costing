@@ -50,11 +50,14 @@ const NewItemList = styled.div`
   height: 100%;
   overflow: hidden;
 
+  @media (max-width: 1728px) {
+    height: 500px;
+  }
   @media (max-width: 1024px) {
-    /* height: 350px; */
+    height: 100%;
   }
   @media (max-width: 375px) {
-    /* height: 150px; */
+    height: 100%;
   }
 `;
 

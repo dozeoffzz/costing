@@ -39,6 +39,9 @@ const ProductsContainer = styled.div`
   width: 100%;
   height: 600px;
 
+  @media (max-width: 1728px) {
+    height: 500px;
+  }
   @media (max-width: 1024px) {
     height: 350px;
   }

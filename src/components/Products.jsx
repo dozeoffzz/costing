@@ -92,6 +92,9 @@ const ProductsContianer = styled.div`
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   /* height: 500px; */
+  @media (max-width: 1728px) {
+    height: 500px;
+  }
 
   @media (max-width: 1024px) {
     display: grid;
@@ -107,12 +110,14 @@ const ProductsContianer = styled.div`
     overflow-y: hidden;
 
     gap: 20px;
+    height: 100%;
   }
 
   @media (max-width: 375px) {
     display: flex;
     overflow-x: auto;
     gap: 20px;
+    height: 100%;
 
     scroll-snap-type: x mandatory;
     -ms-overflow-style: none;

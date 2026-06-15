@@ -100,7 +100,7 @@ const CollectionText = styled.div`
     white-space: pre-line;
   }
 
-  @media (max-width: 1919px) {
+  @media (max-width: 1728px) {
     padding: 10px;
     left: auto;
     right: 30px;
