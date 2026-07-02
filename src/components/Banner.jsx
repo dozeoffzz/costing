@@ -21,7 +21,7 @@ const BannerTrack = styled.div`
   display: flex;
   width: 100%;
   height: 100%;
-  transition: transform 1.5s ease-in-out;
+  transition: transform 1s ease-in-out;
 
   transform: ${({ current }) => `translateX(-${current * 100}%)`};
 `;
@@ -171,7 +171,7 @@ export default function Banner() {
       <CollectionText>
         <span>{activeBanner.name} collection</span>
         <p>{activeBanner.collection}</p>
-        <GoCollection>컬렉션 보러가기 -</GoCollection>
+        <GoCollection>컬렉션 보러가기 -&gt;</GoCollection>
       </CollectionText>
     </BannerContainer>
   );
